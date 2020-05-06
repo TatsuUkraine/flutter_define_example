@@ -10,7 +10,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;&#10;&#10;echo &quot;$(echo &quot;$DART_DEFINES&quot; | tr &apos;,&apos; &apos;\n&apos;)&quot; &gt; ${SRCROOT}/Flutter/Defineexample.xcconfig&#10;">
+               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;&#10;&#10;echo &quot;$DART_DEFINES&quot; | tr &apos;,&apos; &apos;\n&apos; &gt; ${SRCROOT}/Flutter/Defineexample.xcconfig&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"

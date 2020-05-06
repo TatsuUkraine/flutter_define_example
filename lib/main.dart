@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-const EXAMPLE_VAR = String.fromEnvironment('DEFINEEXAMPLE_EXAMPLE', defaultValue: 'BAR');
-const EXAMPLE_2_VAR = String.fromEnvironment('DEFINEEXAMPLE_EXAMPLE_2', defaultValue: 'BAR_2');
+const EXAMPLE_APP_NAME = String.fromEnvironment('DEFINEEXAMPLE_APP_NAME', defaultValue: 'awesomeApp');
 
 void main() => runApp(MyApp());
 
@@ -95,14 +94,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You defined ENV varianbles like',
+              'You defined ENV variables like',
             ),
             Text(
-              'EXAMPLE: $EXAMPLE_VAR',
-              style: Theme.of(context).textTheme.headline6,
-            ),
-            Text(
-              'EXAMPLE_2: $EXAMPLE_2_VAR',
+              'APP_NAME: $EXAMPLE_APP_NAME',
               style: Theme.of(context).textTheme.headline6,
             ),
           ],

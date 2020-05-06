@@ -1,2 +1,3 @@
 #include "Generated.xcconfig"
-#include? "Defineexample.xcconfig"
+#include "Defineexample-defaults.xcconfig"
+#include "Defineexample.xcconfig"
