@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-const EXAMPLE_VAR = String.fromEnvironment('EXAMPLE', defaultValue: 'BAR');
-const EXAMPLE_2_VAR = String.fromEnvironment('EXAMPLE_2', defaultValue: 'BAR_2');
+const EXAMPLE_VAR = String.fromEnvironment('DEFINEEXAMPLE_EXAMPLE', defaultValue: 'BAR');
+const EXAMPLE_2_VAR = String.fromEnvironment('DEFINEEXAMPLE_EXAMPLE_2', defaultValue: 'BAR_2');
 
 void main() => runApp(MyApp());
 
