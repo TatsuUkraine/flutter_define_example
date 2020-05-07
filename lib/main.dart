@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class EnvironmentConfig {
-  static const EXAMPLE_APP_NAME = String.fromEnvironment('DEFINEEXAMPLE_APP_NAME', defaultValue: 'awesomeApp');
+  static const EXAMPLE_APP_NAME = String.fromEnvironment(
+    'DEFINEEXAMPLE_APP_NAME',
+    defaultValue: 'awesomeApp'
+  );
 }
 
 void main() => runApp(MyApp());
