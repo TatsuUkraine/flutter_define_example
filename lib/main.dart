@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:package_info/package_info.dart';
 
 class EnvironmentConfig {
-  static const EXAMPLE_APP_NAME = String.fromEnvironment(
+  static const APP_NAME = String.fromEnvironment(
     'DEFINEEXAMPLE_APP_NAME',
     defaultValue: 'awesomeApp'
+  );
+  static const APP_SUFFIX = String.fromEnvironment(
+      'DEFINEEXAMPLE_APP_SUFFIX'
   );
 }
 
@@ -85,13 +89,44 @@ class _MyHomePageState extends State<MyHomePage> {
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
               'You defined ENV variables like',
+              style: Theme.of(context).textTheme.headline5,
             ),
             Text(
-              'APP_NAME: ${EnvironmentConfig.EXAMPLE_APP_NAME}',
-              style: Theme.of(context).textTheme.headline6,
+              'APP_NAME: ${EnvironmentConfig.APP_NAME}',
+              style: Theme.of(context).textTheme.subtitle1,
+            ),
+            Text(
+              'APP_SUFFIX: ${EnvironmentConfig.APP_SUFFIX}',
+              style: Theme.of(context).textTheme.subtitle1,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    'Package Name',
+                    style: Theme.of(context).textTheme.headline5,
+                  ),
+                  FutureBuilder<PackageInfo>(
+                      future: PackageInfo.fromPlatform(),
+                      builder: (context, value) {
+                        if (!value.hasData) {
+                          return Container();
+                        }
+
+                        return Text(
+                          value.data.packageName,
+                          style: Theme.of(context).textTheme.headline6,
+                        );
+                      }
+                  ),
+                ],
+              ),
             ),
           ],
         ),
