@@ -10,7 +10,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;&#10;function urldecode() { : &quot;${*//+/ }&quot;; echo &quot;${_//%/\\x}&quot;; }&#10;&#10;IFS=&apos;,&apos; read -r -a define_items &lt;&lt;&lt; &quot;$DART_DEFINES&quot;&#10;&#10;&#10;for index in &quot;${!define_items[@]}&quot;&#10;do&#10;    define_items[$index]=$(urldecode &quot;${define_items[$index]}&quot;);&#10;done&#10;&#10;printf &quot;%s\n&quot; &quot;${define_items[@]}&quot; &gt; ${SRCROOT}/Flutter/Defineexample.xcconfig&#10;">
+               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;&#10;function urldecode() { : &quot;${*//+/ }&quot;; echo &quot;${_//%/\\x}&quot;; }&#10;&#10;IFS=&apos;,&apos; read -r -a define_items &lt;&lt;&lt; &quot;$DART_DEFINES&quot;&#10;&#10;&#10;for index in &quot;${!define_items[@]}&quot;&#10;do&#10;    define_items[$index]=$(urldecode &quot;${define_items[$index]}&quot;);&#10;done&#10;&#10;printf &quot;%s\n&quot; &quot;${define_items[@]}&quot;|grep &apos;^DEFINEEXAMPLE_&apos; &gt; ${SRCROOT}/Flutter/Defineexample.xcconfig&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
