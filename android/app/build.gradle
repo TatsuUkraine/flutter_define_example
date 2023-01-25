@@ -20,9 +20,14 @@ def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
+
 def dartEnvironmentVariables = [
-    DEFINEEXAMPLE_APP_NAME: 'awesomeApp',
-    DEFINEEXAMPLE_APP_SUFFIX: null
+    DEFINEEXAMPLE_APP_NAME: project.hasProperty('DEFINEEXAMPLE_APP_NAME')
+            ? DEFINEEXAMPLE_APP_NAME
+            : 'awesomeApp',
+    DEFINEEXAMPLE_APP_SUFFIX: project.hasProperty('DEFINEEXAMPLE_APP_SUFFIX')
+            ? DEFINEEXAMPLE_APP_SUFFIX
+            : null
 ];
 if (project.hasProperty('dart-defines')) {
     dartEnvironmentVariables = dartEnvironmentVariables + project.property('dart-defines')
@@ -38,7 +43,7 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 31
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
